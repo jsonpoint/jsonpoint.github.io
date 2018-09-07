@@ -26,7 +26,23 @@
   </head>
 
   <body id="page-top">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<div ng-app="myApp" ng-controller="myCtrl">
 
+First Name: <input type="number" ng-model="firstName"><br>
+Last Name: <input type="number" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + lastName}}
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstName= "John";
+    $scope.lastName= "Doe";
+});
+</script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Start Bootstrap</span>
